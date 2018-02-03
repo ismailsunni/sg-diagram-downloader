@@ -53,18 +53,22 @@ from sg_exceptions import (
     NotInSouthAfricaException
 )
 from proxy import get_proxy
+from custom_logging import LOGGER
 
 # pylint: disable=F0401
 # noinspection PyUnresolvedReferences
 from bs4 import BeautifulSoup
 # pylint: enable=F0401
 
-from custom_logging import LOGGER
 
 third_party_path = os.path.abspath(
     os.path.join(os.path.dirname(__file__), 'third_party'))
+bs4_path = os.path.join(third_party_path, 'bs4')
 if third_party_path not in sys.path:
     sys.path.append(third_party_path)
+if bs4_path not in sys.path:
+    sys.path.append(bs4_path)
+
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 SG_DIAGRAM_SQLITE3 = os.path.join(DATA_DIR, 'sg_diagrams.sqlite')

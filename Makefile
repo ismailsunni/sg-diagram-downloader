@@ -213,3 +213,12 @@ flake8:
 	@echo "-----------"
 	@flake8 --version
 	@flake8 || true
+
+docker-test:
+	@echo
+	@echo "----------------------------------"
+	@echo "Run tests in docker"
+	@echo "Image: kartoza/qgis-testing:boundlessgeo-2.14.7"
+	@echo "You can change the tested package in 'test_suite.py' in the 'test_package' function."
+	@echo "----------------------------------"
+	@./run-docker-test.sh
